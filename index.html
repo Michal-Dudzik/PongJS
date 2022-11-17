@@ -1,25 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pong</title>
+</head>
 <style>
 	body {
 		background-color: #383838;
 		margin: 0;
 	}
 
-	/* .scoreboard {
+	.scoreboard {
 		width: 300px;
 		height: 50px;
+		background-color: green;
 		position: absolute;
 		top: 0;
 		left: 40%;
-		z-index: 1;
-	} */
+		z-index: 5;
+	}
+
+	#player1{
+		width: 50px;
+		height: 50px;
+		background-color: red;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 5;
+	}
+
+	#player2{
+		width: 50px;
+		height: 50px;
+		background-color: blue;
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 5;
+	}
 </style>
 
-<!-- <div class="scoreboard">
-	<p>P1:</p>
-	<p>P2:</p>
-</div> -->
-
-<canvas></canvas>
+<body>
+	<div class="scoreboard">
+		<p id="player1">P1:</p>
+		<p id="player2">P2:</p>
+	</div>
+	
+	<canvas></canvas>
+	
+	
+	
+</body>
 
 <script>
 	const canvas = document.querySelector("canvas");
@@ -155,7 +189,7 @@
 
 	function animate() {
 		requestAnimationFrame(animate);
-		c.fillStyle = "black";
+		c.fillStyle = "#383838";
 		c.fillRect(0, 0, canvas.width, canvas.height);
 		paddle1.update();
 		paddle2.update();
@@ -203,7 +237,10 @@
 
 	//TODO add win conditions
 
+	//TODO add lobby for players to join and start game
+	
 	//TODO add express and socket.io server for multiplayer
 
-	//TODO add lobby for players to join and start game
+
 </script>
+</html>
